@@ -1,0 +1,49 @@
+<!-- Modal -->
+<div class="modal fade" id="modalProductos" role="dialog" th:fragment="modalProductos">
+    <div class="modal-dialog" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Productos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Producto</th>
+                            <th>Descripcion</th>
+                            <th>Precio</th>
+                            <th>Existencias</th>
+                        </tr>
+                        </thead>
+                        <tr th:remove="all">
+                            <td>123</td>
+                            <td>Tasty Goodnees 1</td>
+                            <td><a href="#">View</a></td>
+                        </tr>
+                        <tr th:remove="all">
+                            <td>12333</td>
+                            <td>Tasty Goodnees 2</td>
+                            <td><a href="#">View</a></td>
+                        </tr>
+                        <tr th:each="producto : ${productos}">
+                            <td th:text="${producto.id}">334</td>
+                            <td th:text="${producto.nombre}">Tasty Goodnees 3</td>
+                            <td th:text="${producto.descripcion}">Tasty Goodnees 3</td>
+                            <td th:text="${producto.precio}">Tasty Goodnees 3</td>
+                            <td th:text="${producto.existencias}">Tasty Goodnees 3</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
